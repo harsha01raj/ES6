@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Problem 3</title>
+  </head>
+  <body></body>
+  <script>
+    let casechange = function () {
+      let input = ["MA", "SA", "I", "SCH", "OOL"];
+      let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      let lowercase = "abcdefghijklmnopqrstuvwxyz";
+      let length = uppercase.length;
+     
+      let output = [];
+      console.log(length);
+      //   console.log(input);
+      for (let x of input) {
+        let string = "";
+        // console.log(x);
+        for (let i = 0; i < x.length; i++) {
+          //   console.log(x[i]);
+          for (let j = 0; j < length; j++) {
+            if (x[i] == uppercase[j]) {
+              //   console.log(lowercase[j]);
+              string = string + lowercase[j];
+            //   console.log(string);
+            }
+          }
+        }
+        output.push(string);
+      }
+      console.log(output);
+    };
+    casechange();
+  </script>
+</html>
