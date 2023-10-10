@@ -7,12 +7,12 @@
   </head>
   <body></body>
   <script>
-    let casechange = function () {
+    let casechange = () => {
       let input = ["MA", "SA", "I", "SCH", "OOL"];
       let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       let lowercase = "abcdefghijklmnopqrstuvwxyz";
       let length = uppercase.length;
-     
+
       let output = [];
       console.log(length);
       //   console.log(input);
@@ -25,7 +25,7 @@
             if (x[i] == uppercase[j]) {
               //   console.log(lowercase[j]);
               string = string + lowercase[j];
-            //   console.log(string);
+              //   console.log(string);
             }
           }
         }
