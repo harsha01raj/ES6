@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter class</title>
+    <style>
+      * {
+        text-align: center;
+      }
+      #parent {
+        border: 2px solid black;
+        height: 210px;
+        width: 300px;
+        margin-top: 50px;
+        margin: auto;
+        margin-top: 100px;
+        background-color: teal;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #display {
+        border: 2px solid red;
+        width: 200px;
+        height: 20px;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 70px;
+        background-color: white;
+      }
+      button{
+        border: 2px solid red;
+      }
+      #run{
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="display">00</div>
+      <button id="start">Start</button>
+      <button id="Increament">Increament</button>
+      <button id="Decreament">Decreament</button>
+      <div id="run">False</div>
+    </div>
+  </body>
+  <script>
+    let display = document.getElementById("display");
+    let run = document.getElementById("run");
+    let running = false;
+    let timer = null;
+    let seconds = 0;
+    document.getElementById("start").addEventListener("click", () => {
+      if (running == false) {
+        running = true;
+        timer = setInterval(updatewatch, 1000);
+        run.textContent = "True";
+        document.getElementById("start").textContent = "Stop";
+      } else {
+        clearInterval(timer);
+        running = false;
+        run.textContent = "False";
+      }
+    });
+
+    function updatewatch() {
+      if (running == true) {
+        seconds++;
+      }
+      display.textContent = seconds;
+    }
+
+    document.getElementById("Increament").addEventListener("click", () => {
+      clearInterval(timer);
+      seconds++;
+      display.textContent = seconds;
+      run.textContent = "True";
+    });
+    document.getElementById("Decreament").addEventListener("click", () => {
+      clearInterval(timer);
+      if (seconds > 0) {
+        seconds--;
+        display.textContent = seconds;
+        run.textContent = "True";
+      }
+    });
+  </script>
+</html>
